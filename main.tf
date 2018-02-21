@@ -9,6 +9,7 @@ resource "aws_lambda_function" "update_route53" {
     runtime          = "nodejs6.10"
     handler          = "index.handler"
     role             = "${element(concat(compact(list(var.iam_role_arn)), aws_iam_role.lambda.*.arn), 0)}"
+    timeout          = 30
     tags             = "${var.tags}"
 
     # Only allow it to execute one function at a time to prevent concurrency issues updating Route 53
