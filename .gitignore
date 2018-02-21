@@ -1,0 +1,6 @@
+# Local terraform files
+*.tfstate*
+.terraform/
+
+# NodeJS
+node_modules/
